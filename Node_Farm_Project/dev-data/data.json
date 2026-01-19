@@ -1,0 +1,136 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Vanilla",
+      "category": "Classic Flavors",
+      "price": 3.99,
+      "image": "vanilla.jpg",
+      "description": "Smooth and creamy classic vanilla",
+      "longDescription": "Indulge in our classic vanilla ice cream, made with premium vanilla beans and fresh cream. The smooth texture and rich vanilla flavor make it a timeless favorite for ice cream lovers everywhere.",
+      "rating": 4.5,
+      "reviews": 128
+    },
+    {
+      "id": 2,
+      "name": "Chocolate",
+      "category": "Classic Flavors",
+      "price": 3.99,
+      "image": "choco.jpg",
+      "description": "Rich and decadent chocolate",
+      "longDescription": "Experience the richness of our premium chocolate ice cream, crafted with Belgian cocoa. Every spoonful delivers a deep, satisfying chocolate flavor that's perfect for chocolate enthusiasts.",
+      "rating": 4.7,
+      "reviews": 156
+    },
+    {
+      "id": 3,
+      "name": "Strawberry",
+      "category": "Classic Flavors",
+      "price": 4.49,
+      "image": "strawberry.jpg",
+      "description": "Fresh strawberry delight",
+      "longDescription": "Made with real strawberries, our strawberry ice cream is a burst of fruity freshness. We use only the finest strawberries to ensure a natural, delicious taste in every bite.",
+      "rating": 4.4,
+      "reviews": 94
+    },
+    {
+      "id": 4,
+      "name": "Butterscotch",
+      "category": "Classic Flavors",
+      "price": 3.99,
+      "image": "butterscotch.jpg",
+      "description": "Sweet and buttery butterscotch",
+      "longDescription": "Our butterscotch ice cream combines the sweetness of caramel with rich buttery notes. The indulgent flavor profile makes it a perfect dessert choice.",
+      "rating": 4.3,
+      "reviews": 87
+    },
+    {
+      "id": 5,
+      "name": "Mango",
+      "category": "Fruit-Based Flavors",
+      "price": 4.49,
+      "image": "mango.jpg",
+      "description": "Tropical mango perfection",
+      "longDescription": "Transport yourself to tropical paradise with our mango ice cream. Made from ripe, juicy mangoes, this flavor captures the essence of summer in every scoop.",
+      "rating": 4.6,
+      "reviews": 112
+    },
+    {
+      "id": 6,
+      "name": "Coconut",
+      "category": "Fruit-Based Flavors",
+      "price": 4.49,
+      "image": "coconut.jpg",
+      "description": "Creamy coconut paradise",
+      "longDescription": "Escape to a tropical island with our creamy coconut ice cream. We blend fresh coconut milk with cream to create a luxuriously smooth and authentic coconut experience.",
+      "rating": 4.5,
+      "reviews": 103
+    },
+    {
+      "id": 7,
+      "name": "Guava",
+      "category": "Fruit-Based Flavors",
+      "price": 4.49,
+      "image": "guava.webp",
+      "description": "Tangy guava bliss",
+      "longDescription": "Our guava ice cream offers a unique blend of sweet and tangy flavors. Perfect for those who love tropical fruits and adventurous taste buds.",
+      "rating": 4.4,
+      "reviews": 76
+    },
+    {
+      "id": 8,
+      "name": "Lychee",
+      "category": "Fruit-Based Flavors",
+      "price": 4.49,
+      "image": "lychee.jpg",
+      "description": "Exotic lychee experience",
+      "longDescription": "Discover the delicate and floral notes of our lychee ice cream. This exotic flavor is a favorite among those seeking something truly special.",
+      "rating": 4.6,
+      "reviews": 89
+    },
+    {
+      "id": 9,
+      "name": "Dark Chocolate",
+      "category": "Chocolate-Based Variants",
+      "price": 4.49,
+      "image": "dark choco.jpg",
+      "description": "Intense dark chocolate",
+      "longDescription": "For the dark chocolate connoisseur, our dark chocolate ice cream delivers intense cocoa flavor with a sophisticated, slightly bitter finish.",
+      "rating": 4.8,
+      "reviews": 142
+    },
+    {
+      "id": 10,
+      "name": "Belgium Chocolate",
+      "category": "Chocolate-Based Variants",
+      "price": 4.99,
+      "image": "belgium choco.jpg",
+      "description": "Premium Belgium chocolate",
+      "longDescription": "Indulge in our premium Belgium chocolate ice cream, crafted with imported Belgian chocolate. The smooth, velvety texture and rich chocolate flavor are unmatched.",
+      "rating": 4.9,
+      "reviews": 167
+    },
+    {
+      "id": 11,
+      "name": "Brownie Fudge",
+      "category": "Chocolate-Based Variants",
+      "price": 4.99,
+      "image": "brownie choco.webp",
+      "description": "Fudgy brownie chunks",
+      "longDescription": "Enjoy creamy chocolate ice cream loaded with chunks of fudgy brownies. A chocolate lover's dream combination with perfect texture contrast.",
+      "rating": 4.7,
+      "reviews": 134
+    },
+    {
+      "id": 12,
+      "name": "Nutella",
+      "category": "Chocolate-Based Variants",
+      "price": 5.49,
+      "image": "nutella.webp",
+      "description": "Hazelnut chocolate spread",
+      "longDescription": "Our Nutella ice cream captures the beloved hazelnut-chocolate flavor you know and love. Smooth, creamy, and absolutely delicious.",
+      "rating": 4.8,
+      "reviews": 198
+    }
+  ]
+}

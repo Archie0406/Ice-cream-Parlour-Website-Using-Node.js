@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail</title>
+    <link rel="stylesheet" href="../public/style.css">
+    <script src="https://kit.fontawesome.com/7a4b62b0a4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="navigation container">
+            <div class="logo_container">
+                <img src="../images/logo.jpg" alt="logo">
+            </div>
+            
+            <div class="menu_items">
+                <ul>
+                    <li><a href="../html/home.html">Home</a></li>
+                    <li><a href="../html/explore.html">Explore</a></li>
+                    <li><a href="../html/order.html">Order Now</a></li>
+                    <li><a href="../html/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="bar_icon">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div style="padding: 20px; background-color: #f8f9fa; border-bottom: 1px solid #eee;">
+        <div class="container">
+            <a href="../html/index.html" style="color: #667eea; text-decoration: none;">Home</a> /
+            <a href="template-overview.html" style="color: #667eea; text-decoration: none;">Flavors</a> /
+            <span id="breadcrumb-product" style="color: #777;">Product</span>
+        </div>
+    </div>
+
+    <!-- Product Detail -->
+    <div class="product-detail">
+        <div class="product-detail-container">
+            <div>
+                <img id="product-image" src="../images/vanilla.jpg" alt="Product" class="product-detail-image">
+            </div>
+            <div class="product-detail-info">
+                <p class="product-detail-category" id="product-category">Classic</p>
+                <h1 class="product-detail-name" id="product-name">Vanilla</h1>
+                
+                <div class="product-detail-rating">
+                    <span>★★★★★</span>
+                    <span id="product-rating">4.5</span>
+                </div>
+                <p class="product-detail-reviews" id="product-reviews">Based on 120 reviews</p>
+                
+                <p class="product-detail-price" id="product-price">$3.99</p>
+                
+                <p class="product-detail-description" id="product-description">
+                    Creamy classic vanilla ice cream made with premium vanilla beans and natural ingredients.
+                </p>
+                
+                <div class="product-detail-actions">
+                    <div class="quantity-control">
+                        <button class="qty-decrease">−</button>
+                        <input type="number" class="qty-input" value="1" min="1">
+                        <button class="qty-increase">+</button>
+                    </div>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reviews Section -->
+    <div style="max-width: 1200px; margin: 40px auto; padding: 20px;">
+        <h2 style="color: #2c3e50; margin-bottom: 20px;">Customer Reviews</h2>
+        
+        <div style="background-color: #f8f9fa; padding: 20px; border-radius: 12px; margin-bottom: 20px;">
+            <p style="margin: 0; color: #555; font-weight: 600;">Excellent flavor!</p>
+            <p style="margin: 10px 0 0 0; color: #777; font-size: 0.9rem;">★★★★★ by Sarah</p>
+            <p style="margin: 10px 0 0 0; color: #666;">This vanilla ice cream is absolutely delicious. Highly recommended!</p>
+        </div>
+
+        <div style="background-color: #f8f9fa; padding: 20px; border-radius: 12px;">
+            <p style="margin: 0; color: #555; font-weight: 600;">Great quality</p>
+            <p style="margin: 10px 0 0 0; color: #777; font-size: 0.9rem;">★★★★☆ by John</p>
+            <p style="margin: 10px 0 0 0; color: #666;">Very creamy and smooth. Perfect for ice cream lovers.</p>
+        </div>
+    </div>
+
+    <!-- Related Products -->
+    <div style="max-width: 1200px; margin: 40px auto; padding: 20px;">
+        <h2 style="color: #2c3e50; margin-bottom: 20px;">Related Products</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px;">
+            <div class="product-card">
+                <img src="../images/strawberry.jpg" alt="Strawberry" class="product-card-image">
+                <div class="product-card-content">
+                    <p class="product-card-category">Fruit</p>
+                    <h3 class="product-card-name">Strawberry</h3>
+                    <p class="product-card-description">Fresh strawberry flavor</p>
+                    <div class="product-card-footer">
+                        <span class="product-card-price">$4.49</span>
+                        <a href="#" class="product-card-btn">View</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="../images/choco.jpg" alt="Chocolate" class="product-card-image">
+                <div class="product-card-content">
+                    <p class="product-card-category">Chocolate</p>
+                    <h3 class="product-card-name">Chocolate</h3>
+                    <p class="product-card-description">Rich chocolate taste</p>
+                    <div class="product-card-footer">
+                        <span class="product-card-price">$4.29</span>
+                        <a href="#" class="product-card-btn">View</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="../images/mango.jpg" alt="Mango" class="product-card-image">
+                <div class="product-card-content">
+                    <p class="product-card-category">Fruit</p>
+                    <h3 class="product-card-name">Mango</h3>
+                    <p class="product-card-description">Tropical mango blend</p>
+                    <div class="product-card-footer">
+                        <span class="product-card-price">$4.49</span>
+                        <a href="#" class="product-card-btn">View</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer container">
+            <div class="footer_logo">
+                <img src="../images/logo.jpg" alt="logo">
+            </div>
+            <div class="footer_links">
+                <h3>Main Links</h3>
+                <ul>
+                    <li><a href="../html/home.html">Home</a></li>
+                    <li><a href="../html/explore.html">Explore</a></li>
+                    <li><a href="../html/order.html">Order Now</a></li>
+                    <li><a href="../html/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer_social">
+                <h3>Follow Us</h3>
+                <div class="social_icons">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+        <div class="footer_copy">
+            <p>&copy; 2024 Ice Cream Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Sample product data
+        const products = [
+            { id: 1, name: 'Vanilla', category: 'Classic', price: 3.99, image: '../images/vanilla.jpg', rating: 4.5, reviews: 120, description: 'Creamy classic vanilla ice cream made with premium vanilla beans and natural ingredients.' },
+            { id: 2, name: 'Chocolate', category: 'Classic', price: 4.29, image: '../images/choco.jpg', rating: 4.6, reviews: 145, description: 'Rich dark chocolate ice cream with intense cocoa flavor and smooth texture.' },
+            { id: 3, name: 'Strawberry', category: 'Fruit', price: 4.49, image: '../images/strawberry.jpg', rating: 4.4, reviews: 98, description: 'Fresh strawberry ice cream with real fruit pieces and natural sweetness.' },
+            { id: 4, name: 'Mango', category: 'Fruit', price: 4.49, image: '../images/mango.jpg', rating: 4.5, reviews: 110, description: 'Tropical mango ice cream with exotic flavor and creamy texture.' },
+            { id: 5, name: 'Butterscotch', category: 'Classic', price: 4.99, image: '../images/butterscotch.jpg', rating: 4.7, reviews: 156, description: 'Sweet butterscotch ice cream with caramel swirls and buttery taste.' },
+            { id: 6, name: 'Coconut', category: 'Fruit', price: 4.49, image: '../images/coconut.jpg', rating: 4.3, reviews: 87, description: 'Creamy coconut ice cream with tropical coconut flavor.' },
+            { id: 7, name: 'Guava', category: 'Fruit', price: 4.49, image: '../images/guava.webp', rating: 4.2, reviews: 76, description: 'Exotic guava flavored ice cream with tangy sweetness.' },
+            { id: 8, name: 'Dark Chocolate', category: 'Chocolate', price: 4.99, image: '../images/dark choco.jpg', rating: 4.8, reviews: 198, description: 'Premium dark chocolate ice cream with rich cocoa notes.' },
+            { id: 9, name: 'Lychee', category: 'Fruit', price: 4.99, image: '../images/lychee.jpg', rating: 4.4, reviews: 92, description: 'Delicate lychee flavored ice cream with floral notes.' },
+            { id: 10, name: 'Nutella', category: 'Chocolate', price: 5.49, image: '../images/nutella.webp', rating: 4.9, reviews: 187, description: 'Hazelnut chocolate ice cream with Nutella swirls.' },
+            { id: 11, name: 'Brownie Choco', category: 'Chocolate', price: 5.49, image: '../images/brownie choco.webp', rating: 4.7, reviews: 164, description: 'Fudgy chocolate ice cream with brownie bits throughout.' },
+            { id: 12, name: 'Belgium Choco', category: 'Chocolate', price: 5.49, image: '../images/belgium choco.jpg', rating: 4.8, reviews: 176, description: 'Authentic Belgian chocolate ice cream with premium cocoa.' }
+        ];
+
+        // Function to display product (would be called from URL parameter)
+        function displayProduct(productId) {
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                document.getElementById('product-name').textContent = product.name;
+                document.getElementById('product-category').textContent = product.category;
+                document.getElementById('product-price').textContent = '$' + product.price.toFixed(2);
+                document.getElementById('product-image').src = product.image;
+                document.getElementById('product-description').textContent = product.description;
+                document.getElementById('product-rating').textContent = product.rating;
+                document.getElementById('product-reviews').textContent = 'Based on ' + product.reviews + ' reviews';
+                document.getElementById('breadcrumb-product').textContent = product.name;
+            }
+        }
+
+        // Display first product on load
+        displayProduct(1);
+    </script>
+</body>
+</html>

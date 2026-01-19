@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Now - Ice Cream Paradise</title>
+    <link rel="stylesheet" href="../public/style.css" />
+    <script src="https://kit.fontawesome.com/7a4b62b0a4.js" crossorigin="anonymous"></script>
+    <style>
+        /* Order Page Specific Styles */
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.8rem;
+            margin: 0 0 15px 0;
+            font-weight: 700;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            margin: 0;
+            opacity: 0.95;
+        }
+
+        .order-section {
+            padding: 50px 20px;
+            background-color: #fafafa;
+        }
+
+        .order-form-wrapper {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .menu-selection h2,
+        .order-details h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .flavor-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .flavor-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            padding: 15px;
+            text-align: center;
+            border: 2px solid #f0f0f0;
+        }
+
+        .flavor-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+        }
+
+        .flavor-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 12px;
+        }
+
+        .flavor-card h3 {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin: 10px 0 5px 0;
+            font-weight: 700;
+        }
+
+        .flavor-card .price {
+            font-size: 1.3rem;
+            color: #f39c12;
+            font-weight: 700;
+            margin: 8px 0;
+        }
+
+        .flavor-card .description {
+            font-size: 0.85rem;
+            color: #777;
+            margin: 8px 0;
+            line-height: 1.4;
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 12px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 5px;
+        }
+
+        .qty-btn {
+            background-color: #f5f5f5;
+            border: none;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .qty-btn:hover {
+            background-color: #667eea;
+            color: white;
+        }
+
+        .quantity-selector input {
+            width: 45px;
+            text-align: center;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .order-details {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .order-form {
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .order-summary {
+            background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border: 2px solid #e0e0e0;
+        }
+
+        .order-summary h3 {
+            color: #2c3e50;
+            margin: 0 0 15px 0;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            color: #666;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .summary-row.total {
+            border: none;
+            padding: 12px 0;
+            padding-top: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        .payment-options {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .payment-options h3 {
+            color: #2c3e50;
+            margin: 0 0 15px 0;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .payment-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .payment-methods label {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .payment-methods label:hover {
+            border-color: #667eea;
+            background-color: rgba(102, 126, 234, 0.05);
+        }
+
+        .payment-methods input[type="radio"] {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+            margin-bottom: 10px;
+        }
+
+        .checkout-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(243, 156, 18, 0.4);
+        }
+
+        .continue-shopping {
+            width: 100%;
+            background-color: #e0e0e0;
+            color: #2c3e50;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .continue-shopping:hover {
+            background-color: #d0d0d0;
+        }
+
+        .offers-section {
+            padding: 60px 20px;
+            background: white;
+        }
+
+        .offers-section h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        .combo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .combo-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+        }
+
+        .combo-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        .combo-card h3 {
+            font-size: 1.5rem;
+            margin: 0 0 10px 0;
+            font-weight: 700;
+        }
+
+        .combo-card .combo-price {
+            font-size: 2rem;
+            color: #ffd700;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+
+        .combo-card .combo-description {
+            font-size: 0.95rem;
+            margin: 15px 0;
+            opacity: 0.95;
+        }
+
+        .combo-btn {
+            background-color: white;
+            color: #667eea;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .combo-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .order-form-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .order-details {
+                position: static;
+            }
+
+            .flavor-options {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .flavor-options {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                gap: 15px;
+            }
+
+            .flavor-card {
+                padding: 12px;
+            }
+
+            .flavor-card img {
+                height: 140px;
+                margin-bottom: 10px;
+            }
+
+            .flavor-card h3 {
+                font-size: 1rem;
+            }
+
+            .flavor-card .price {
+                font-size: 1.1rem;
+            }
+
+            .combo-grid {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 20px;
+            }
+
+            .order-section {
+                padding: 30px 15px;
+            }
+
+            .offers-section {
+                padding: 40px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header {
+                padding: 40px 15px;
+            }
+
+            .page-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .page-header p {
+                font-size: 0.95rem;
+            }
+
+            .flavor-options {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .flavor-card {
+                padding: 10px;
+            }
+
+            .flavor-card img {
+                height: 120px;
+            }
+
+            .flavor-card h3 {
+                font-size: 0.9rem;
+            }
+
+            .combo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .order-details {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+      <div class="navigation container">
+        <div class="logo_container">
+          <img src="../images/logo.jpg" alt="logo" />
+        </div>
+        
+        <div class="menu_items">
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="order.html">Order Now</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="bar_icon">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>🍦 Place Your Order</h1>
+        <p>Choose your favorite flavors and customize your order</p>
+    </div>
+
+    <!-- Order Section -->
+    <div class="order-section">
+        <div class="order-form-wrapper">
+            <!-- Menu Selection -->
+            <div class="menu-selection">
+                <h2>Select Your Flavors</h2>
+                <div class="flavor-options">
+                    <div class="flavor-card">
+                        <img src="../images/vanilla.jpg" alt="Vanilla">
+                        <h3>Vanilla</h3>
+                        <p class="price">$3.99</p>
+                        <div class="quantity-selector">
+                            <button class="qty-btn">−</button>
+                            <input type="number" value="0" min="0">
+                            <button class="qty-btn">+</button>
+                        </div>
+                        <p class="description">Classic smooth vanilla</p>
+                    </div>
+
+                    <div class="flavor-card">
+                        <img src="../images/choco.jpg" alt="Chocolate">
+                        <h3>Chocolate</h3>
+                        <p class="price">$3.99</p>
+                        <div class="quantity-selector">
+                            <button class="qty-btn">−</button>
+                            <input type="number" value="0" min="0">
+                            <button class="qty-btn">+</button>
+                        </div>
+                        <p class="description">Rich dark chocolate</p>
+                    </div>
+
+                    <div class="flavor-card">
+                        <img src="../images/strawberry.jpg" alt="Strawberry">
+                        <h3>Strawberry</h3>
+                        <p class="price">$4.49</p>
+                        <div class="quantity-selector">
+                            <button class="qty-btn">−</button>
+                            <input type="number" value="0" min="0">
+                            <button class="qty-btn">+</button>
+                        </div>
+                        <p class="description">Fresh strawberry delight</p>
+                    </div>
+
+                    <div class="flavor-card">
+                        <img src="../images/mango.jpg" alt="Mango">
+                        <h3>Mango</h3>
+                        <p class="price">$4.49</p>
+                        <div class="quantity-selector">
+                            <button class="qty-btn">−</button>
+                            <input type="number" value="0" min="0">
+                            <button class="qty-btn">+</button>
+                        </div>
+                        <p class="description">Tropical mango perfection</p>
+                    </div>
+
+                    <div class="flavor-card">
+                        <img src="../images/coconut.jpg" alt="Coconut">
+                        <h3>Coconut</h3>
+                        <p class="price">$4.49</p>
+                        <div class="quantity-selector">
+                            <button class="qty-btn">−</button>
+                            <input type="number" value="0" min="0">
+                            <button class="qty-btn">+</button>
+                        </div>
+                        <p class="description">Creamy coconut paradise</p>
+                    </div>
+
+                    <div class="flavor-card">
+                        <img src="../images/nutella.webp" alt="Nutella">
+                        <h3>Nutella</h3>
+                        <p class="price">$5.49</p>
+                        <div class="quantity-selector">
+                            <button class="qty-btn">−</button>
+                            <input type="number" value="0" min="0">
+                            <button class="qty-btn">+</button>
+                        </div>
+                        <p class="description">Hazelnut chocolate spread</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Details & Checkout -->
+            <div class="order-details">
+                <h2>Order Details</h2>
+                
+                <div class="order-form">
+                    <div class="form-group">
+                        <label for="delivery">Delivery Type</label>
+                        <select id="delivery" name="delivery">
+                            <option value="pickup">Pickup</option>
+                            <option value="home">Home Delivery</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Delivery Address</label>
+                        <textarea id="address" name="address" rows="3" placeholder="Enter your delivery address"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cname">Full Name</label>
+                        <input type="text" id="cname" name="cname" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="special">Special Instructions</label>
+                        <textarea id="special" name="special" rows="3" placeholder="Any special requests or dietary requirements?"></textarea>
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span>$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Delivery Fee:</span>
+                        <span>$2.50</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Tax:</span>
+                        <span>$0.00</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span>$2.50</span>
+                    </div>
+                </div>
+
+                <!-- Payment Options -->
+                <div class="payment-options">
+                    <h3>Payment Method</h3>
+                    <div class="payment-methods">
+                        <label>
+                            <input type="radio" name="payment" value="card" checked>
+                            💳 Credit/Debit Card
+                        </label>
+                        <label>
+                            <input type="radio" name="payment" value="paypal">
+                            🅿️ PayPal
+                        </label>
+                        <label>
+                            <input type="radio" name="payment" value="cash">
+                            💵 Cash on Delivery
+                        </label>
+                    </div>
+                </div>
+
+                <button class="checkout-btn">Proceed to Checkout</button>
+                <button class="continue-shopping">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Offers Section -->
+    <div class="offers-section">
+        <h2>✨ Special Offers & Combos</h2>
+        <div class="combo-grid">
+            <div class="combo-card">
+                <h3>🎯 Classic Duo</h3>
+                <p class="combo-price">$6.99</p>
+                <p class="combo-description">Any 2 scoops + 1 topping</p>
+                <button class="combo-btn">Add to Order</button>
+            </div>
+
+            <div class="combo-card">
+                <h3>👨‍👩‍👧‍👦 Family Pack</h3>
+                <p class="combo-price">$19.99</p>
+                <p class="combo-description">4 flavors + cone set</p>
+                <button class="combo-btn">Add to Order</button>
+            </div>
+
+            <div class="combo-card">
+                <h3>🎉 Party Special</h3>
+                <p class="combo-price">$39.99</p>
+                <p class="combo-description">1 liter + toppings + cups</p>
+                <button class="combo-btn">Add to Order</button>
+            </div>
+
+            <div class="combo-card">
+                <h3>🎂 Birthday Bundle</h3>
+                <p class="combo-price">$49.99</p>
+                <p class="combo-description">Custom cake + all flavors</p>
+                <button class="combo-btn">Add to Order</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer container">
+            <div class="footer_logo">
+                <img src="../images/logo.jpg" alt="logo" />
+            </div>
+            <div class="footer_links">
+                <h3>Main Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="explore.html">Explore</a></li>
+                    <li><a href="order.html">Order Now</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer_social">
+                <h3>Follow Us</h3>
+                <div class="social_icons">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        <div class="footer_copy">
+            <p>&copy; 2025 Ice Cream Paradise. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

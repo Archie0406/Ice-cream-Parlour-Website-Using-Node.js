@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <link rel="stylesheet" href="../public/style.css">
+    <style>
+        .error-container {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .error-content {
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .error-content h1 {
+            font-size: 4rem;
+            color: #f39c12;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .error-content h2 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin: 15px 0;
+        }
+
+        .error-content p {
+            font-size: 1.1rem;
+            color: #666;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 14px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .emoji {
+            font-size: 5rem;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="navigation container">
+            <div class="logo_container">
+                <img src="../images/logo.jpg" alt="logo">
+            </div>
+            <div class="menu_items">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/overview">Overview</a></li>
+                    <li><a href="/api">API</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Error Content -->
+    <div class="error-container">
+        <div class="error-content">
+            <div class="emoji">🍦</div>
+            <h1>404</h1>
+            <h2>Oops! Page Not Found</h2>
+            <p>Looks like this page melted away! The page you're looking for doesn't exist or has been moved.</p>
+            <a href="/" class="back-btn">← Back to Home</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="margin-top: 60px;">
+        <div class="footer container">
+            <div class="footer_logo">
+                <img src="../images/logo.jpg" alt="logo">
+            </div>
+            <div class="footer_links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/overview">Overview</a></li>
+                    <li><a href="/api">API</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer_copy">
+            <p>&copy; 2025 Ice Cream Paradise. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

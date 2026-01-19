@@ -1,0 +1,21 @@
+{
+  "name": "ice-cream-server",
+  "version": "1.0.0",
+  "description": "A Node.js ice cream restaurant server using core modules only",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js"
+  },
+  "keywords": [
+    "nodejs",
+    "http",
+    "server",
+    "ice-cream"
+  ],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}

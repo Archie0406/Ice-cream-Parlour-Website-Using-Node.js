@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore - Our Flavors</title>
+    <link rel="stylesheet" href="../public/style.css" />
+    <script
+      src="https://kit.fontawesome.com/7a4b62b0a4.js"
+      crossorigin="anonymous"
+    ></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+      <div class="navigation container">
+        <div class="logo_container">
+          <img src="../images/logo.jpg" alt="logo" />
+        </div>
+        
+        <div class="menu_items">
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="order.html">Order Now</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="bar_icon">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <h1>Explore Our Delicious Flavors</h1>
+      <p>Discover our wide variety of premium ice cream flavors</p>
+    </div>
+
+    <!-- Filter Section -->
+    <div class="filter-section container">
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="classic">Classic</button>
+        <button class="filter-btn" data-filter="fruit">Fruit</button>
+        <button class="filter-btn" data-filter="chocolate">Chocolate</button>
+      </div>
+    </div>
+
+    <!-- Menu Section -->
+    <div class="menu container">
+        <!-- Classic Flavors -->
+        <div class="flavor-category" data-category="classic">
+            <h3>Classic Flavors</h3>
+            <div class="flavor-grid">
+                <div class="flavor-item">
+                    <img src="../images/vanilla.jpg" alt="Vanilla" class="menu_image">
+                    <p class="size">Vanilla</p>
+                    <p class="flavor-description">Smooth and creamy classic vanilla</p>
+                    <button type="button" class="b" onclick="window.location.href='order.html'">Order Now</button>
+                </div>
+                <div class="flavor-item">
+                  <img src="../images/choco.jpg" alt="choco" class="menu_image">
+                  <p class="size">Chocolate</p>
+                  <p class="flavor-description">Rich and decadent chocolate</p>
+                  <button type="button" class="b" onclick="window.location.href='order.html'">Order Now</button>
+                </div>
+                <div class="flavor-item">
+                  <img src="../images/strawberry.jpg" alt="strawberry" class="menu_image">
+                  <p class="size">Strawberry</p>
+                  <p class="flavor-description">Fresh strawberry delight</p>
+                  <button type="button" class="b" onclick="window.location.href='order.html'">Order Now</button>
+                </div>
+                <div class="flavor-item">
+                  <img src="../images/butterscotch.jpg" alt="butterscotch" class="menu_image">
+                  <p class="size">Butterscotch</p>
+                  <p class="flavor-description">Sweet and buttery butterscotch</p>
+                  <button type="button" class="b" onclick="window.location.href='order.html'">Order Now</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fruit-Based Flavors -->
+        <div class="flavor-category" data-category="fruit">
+            <h3>Fruit-Based Flavors</h3>
+            <div class="flavor-grid">
+                <div class="flavor-item">
+                  <img src="../images/mango.jpg" alt="mango" class="menu_image">
+                  <p class="size">Mango</p>
+                  <p class="flavor-description">Tropical mango perfection</p>
+                  <button type="button" class="b" onclick="window.location.href='order.html'">Order Now</button>
+                </div>
+                <div class="flavor-item">
+                  <img src="../images/coconut.jpg" alt="coconut" class="menu_image">
+                  <p class="size">Coconut</p>
+                  <p class="flavor-description">Creamy coconut paradise</p>
+                  <button type="button" class="b" onclick="window.location.href='order.html'">Order Now</button>
+                </div>
+                <div class="flavor-item">
+                  <img src="../images/guava.webp" alt="guava" class="menu_image">
+                  <p class="size">Guava</p>
+                  <p class="flavor-description">Tangy guava bliss</p>
+                  <button type="button" class="b" onclick="window.location.href='order.html'">Order Now</button>
+                </div>
+                <div class="flavor-item">
+                  <img src="../images/lychee.jpg" alt="lychee" class="menu_image">
+                  <p class="size">Lychee</p>
+                  <p class="flavor-description">Exotic lychee experience</p>
+                  <button type="button" class="b" onclick="window.location.href='order.html'">Order Now</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chocolate-Based Variants -->
+        <div class="flavor-category" data-category="chocolate">
+            <h3>Chocolate-Based Variants</h3>
+            <div class="flavor-grid">
+                <div class="flavor-item">
+                  <img src="../images/dark choco.jpg" alt="dark Chocolate" class="menu_image">
+                  <p class="size">Dark Chocolate</p>
+                  <p class="flavor-description">Intense dark chocolate</p>
+                  <button type="button" class="b" onclick="window.location.href='order.html'">Order Now</button>
+                </div>
+                <div class="flavor-item">
+                  <img src="../images/belgium choco.jpg" alt="belgium Chocolate" class="menu_image">
+                  <p class="size">Belgium Chocolate</p>
+                  <p class="flavor-description">Premium Belgium chocolate</p>
+                  <button type="button" class="b" onclick="window.location.href='order.html'">Order Now</button>
+                </div>
+                <div class="flavor-item">
+                  <img src="../images/brownie choco.webp" alt="brownie" class="menu_image">
+                  <p class="size">Brownie Fudge</p>
+                  <p class="flavor-description">Fudgy brownie chunks</p>
+                  <button type="button" class="b" onclick="window.location.href='order.html'">Order Now</button>
+                </div>
+                <div class="flavor-item">
+                  <img src="../images/nutella.webp" alt="nutella" class="menu_image">
+                  <p class="size">Nutella</p>
+                  <p class="flavor-description">Hazelnut chocolate spread</p>
+                  <button type="button" class="b" onclick="window.location.href='order.html'">Order Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+      <div class="footer container">
+        <div class="footer_logo">
+          <img src="../images/logo.jpg" alt="logo" />
+        </div>
+        <div class="footer_links">
+          <h3>Main Links</h3>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="order.html">Order Now</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer_social">
+          <h3>Follow Us</h3>
+          <div class="social_icons">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-youtube"></i>
+          </div>
+        </div>
+      </div>
+      <div class="footer_copy">
+        <p>&copy; 2025 Ice Cream Paradise. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Filter functionality
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const flavorCategories = document.querySelectorAll('.flavor-category');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          // Remove active class from all buttons
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          // Add active class to clicked button
+          button.classList.add('active');
+
+          const selectedFilter = button.getAttribute('data-filter');
+
+          // Show/hide flavor categories based on filter
+          flavorCategories.forEach(category => {
+            if (selectedFilter === 'all') {
+              category.style.display = 'block';
+              category.style.animation = 'fadeIn 0.3s ease-in';
+            } else {
+              const categoryType = category.getAttribute('data-category');
+              if (categoryType === selectedFilter) {
+                category.style.display = 'block';
+                category.style.animation = 'fadeIn 0.3s ease-in';
+              } else {
+                category.style.display = 'none';
+              }
+            }
+          });
+        });
+      });
+    </script>
+</body>
+</html>
